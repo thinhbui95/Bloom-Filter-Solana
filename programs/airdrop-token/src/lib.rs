@@ -34,7 +34,7 @@ pub mod airdrop_bloom_filter {
         let user = ctx.accounts.user.key();
 
         // Check Bloom filter
-        if might_contain(&user, &bloom_filter) {
+        if might_contain(&user, &bloom_filter) { // May be a false positive
             return Err(ErrorCode::AlreadyClaimed.into());
         }
 

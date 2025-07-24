@@ -70,7 +70,6 @@ pub fn might_contain(user: &Pubkey, bloom_filter: &BloomFilterData) -> bool {
         let index = get_hash(user, i as u64) as usize;
         let byte_index = index / 8;
         let bit_index = index % 8;
-        msg!("Checking Bloom filter: byte_index={}, bit_index={}", byte_index, bit_index);
         if (bloom_filter.bit_array[byte_index] & (1 << bit_index)) == 0 {
             return false; // Definitely not claimed
         }

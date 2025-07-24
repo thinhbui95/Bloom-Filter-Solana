@@ -9,7 +9,7 @@ pub struct BloomFilterData {
 
 
 impl BloomFilterData {
-    pub const SIZE: usize = BIT_ARRAY_SIZE / 8; // 158 u64s, each u64 is 8 bytes
+    pub const SIZE: usize = BIT_ARRAY_SIZE / 8; // Size in bytes
     pub fn new() -> Self {
         Self {
             bit_array: vec![0u8; Self::SIZE], // Initialize with zeros
